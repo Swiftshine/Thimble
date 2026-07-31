@@ -1,0 +1,19 @@
+{
+    WURPLSVersion: '1.0',
+    Name: 'Thimble',
+    Type: 'CoreMod',
+    Version: '1.0.0',
+    Description: 'A Telkin mod.',
+    SourceDirs: [
+        'src',
+    ],
+    IncludeDirs: [
+        'include',
+    ],
+    BuildOptions: [],
+    Targets: {
+        US: {
+            TitleID: '00050000-10184D00',
+        },
+    },
+}

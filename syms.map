@@ -1,0 +1,6 @@
+@addresses_from "00050000-10184D00"
+
+// Write your game/app symbols here!
+
+/* Operator New/Delete */
+    _Znwm = 0x02BC0D7C; // operator new(unsigned long)
