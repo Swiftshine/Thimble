@@ -1,14 +1,12 @@
 #include <telkin/Hooks.h>
 #include <telkin/Print.h>
+#include <thimble/ThimbleConfig.hpp>
 
 int YarnBallColor(void *, int) {
-    tk::println("Forcing yarn ball color to 4");
-    return 4;
+    int color = th::ThimbleConfig::Instance().ReadParam<int>("force_yarn_color");
+    return color;
 }
 
 tBranch(0x0253a16c, YarnBallColor, tk::BranchType::bl);
 
-void main() {
-    tk::println("Hello, world!");
-    // Hello world!
-}
+void main() { }

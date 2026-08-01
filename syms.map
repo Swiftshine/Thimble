@@ -1,6 +1,24 @@
 @addresses_from "00050000-10184D00"
 
-// Write your game/app symbols here!
+/* C STL */
+    ceilf = 0x02D072BC;
+
+/* Game */
+    // Game::Run()
+    _ZN4Game3RunEv = 0x02BBE37C;
+
+/* gfl */
+    /* gfl::ResArchivedFileInfo */
+        // gfl::ResArchivedFileInfo::OpenFileFromArchive(char const*, unsigned int)
+        _ZN3gfl19ResArchivedFileInfo19OpenFileFromArchiveEPKcj = 0x02bcc534;
+
+    /* gfl::ResFileObject */
+        // gfl::ResFileObject::GetFilesize() const
+        _ZNK3gfl13ResFileObject11GetFilesizeEv = 0x0217C818;
 
 /* Operator New/Delete */
-    _Znwm = 0x02BC0D7C; // operator new(unsigned long)
+    // operator new(unsigned long)
+    _Znwm = 0x02BC0D7C;
+
+    // operator delete(void*)
+    _ZdlPv = 0x02BC0DD4;
