@@ -18,6 +18,10 @@ inline void Trim(std::string& s) {
     s.erase(s.find_last_not_of(whitespace) + 1);
 }
 
+inline bool IsEmpty(const char* s) {
+    return s[0] == 0;
+}
+
 void ThimbleConfig::ConfigureFrom(const char* pFilepath) {
     gfl::ResFileObject res = gfl::ResArchivedFileInfo::OpenFileFromArchive(pFilepath, 0);
 
@@ -78,17 +82,25 @@ const char* ThimbleConfig::ReadParam<const char*>(const char* pParamName) {
             return param.value.c_str();
     }
 
-    return "<ERROR>";
+    return "";
 }
 
 template<>
 int ThimbleConfig::ReadParam<int>(const char* pParamName) {
+    if (IsEmpty(pParamName)) {
+        return -1;
+    }
+
     const char* value = ReadParam<const char*>(pParamName);
     return static_cast<int>(strtol(value, nullptr, 10));
 }
 
 template<>
 float ThimbleConfig::ReadParam<float>(const char* pParamName) {
+    if (IsEmpty(pParamName)) {
+        return 0.0f;
+    }
+
     const char* value = ReadParam<const char*>(pParamName);
     return static_cast<float>(atof(value));
 }
