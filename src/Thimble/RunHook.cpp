@@ -8,7 +8,6 @@ namespace th {
 void RunHook() {
     // collect configs
     ThimbleConfig::Instance().ConfigureFrom("thimble/config.cfg");
-    bool zlib = ThimbleConfig::Instance().ReadParam<bool>("use_zlib");
 
     Game::Run();
 }

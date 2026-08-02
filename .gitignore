@@ -1,3 +1,5 @@
 .tachyon
 out/
 scratch/
+compile-commands.json
+compile_flags.txt

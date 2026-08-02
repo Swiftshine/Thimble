@@ -9,6 +9,8 @@
     ],
     IncludeDirs: [
         'include',
+        'include/game',
+        'include/gfl'
     ],
     BuildOptions: [],
     Targets: {
