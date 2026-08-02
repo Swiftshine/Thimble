@@ -1,1 +1,6 @@
-// Write your conversion mappings here!
+@platform CONSOLE:
+    // text sections (.syscall, .text)
+    0x02000000 - 0x02D0D4A0 : +0x0C700000
+
+    // data sections (.rodata, .data, .module_id, .bss)
+    0x10000000 - 0x1032355C : +0x00502200

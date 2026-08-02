@@ -8,6 +8,12 @@
     _ZN4Game3RunEv = 0x02BBE37C;
 
 /* gfl */
+    // gfl::Alloc(unsigned char, unsigned long, unsigned int)
+    _ZN3gfl5AllocEhmj = 0x02BBF7A0;
+
+    // gfl::Free(void*)
+    _ZN3gfl4FreeEPv = 0x02BBF9F8;
+
     /* gfl::ResArchivedFileInfo */
         // gfl::ResArchivedFileInfo::OpenFileFromArchive(char const*, unsigned int)
         _ZN3gfl19ResArchivedFileInfo19OpenFileFromArchiveEPKcj = 0x02bcc534;
@@ -19,6 +25,10 @@
 /* Operator New/Delete */
     // operator new(unsigned long)
     _Znwm = 0x02BC0D7C;
+    // operator new[](unsigned long)
+    _Znam = 0x02BC0D7C;
 
     // operator delete(void*)
     _ZdlPv = 0x02BC0DD4;
+    // operator delete[](void*)
+    _ZdaPv = 0x02BC0DD4;

@@ -3,6 +3,7 @@
 #define TK_IMPL_MEMMOVE
 #define TK_IMPL_MEMCHR
 #define TK_IMPL_MEMCMP
+#define TK_IMPL_MEMSET
 #define TK_IMPL_STRCMP
 #define TK_IMPL_STRTOL
 #define TK_IMPL_ATOF
