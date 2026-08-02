@@ -2,34 +2,39 @@
 #include <game/Game.hpp>
 #include "ThimbleConfig.hpp"
 
+#include <array>
+#include <functional>
+
 namespace th {
 const char* CONFIG_PATH = "thimble/config.bson";
 
 extern void SetupAdditionalGimmickProfiles();
 
 void RunHook() {
-    tk::println("Running pre-run tasks...");
+    using Task = void(*)(size_t, size_t);
 
-    // collect configs
-    tk::println("\t (1/3) Setting up ThimbleConfig...");
-    ThimbleConfig& config = ThimbleConfig::Instance();
+    auto tasks = std::array<Task, 2>{ {
+        [](size_t i, size_t total) {
+            tk::println("\t(%d/%d) Setting up ThimbleConfig...", i + 1, total);
+            ThimbleConfig::Instance().ConfigureFrom(CONFIG_PATH);
+        },
+        [](size_t i, size_t total) {
+            tk::println("\t(%d/%d) Setting up additional gimmick profiles...", i + 1, total);
+            SetupAdditionalGimmickProfiles();
+        }
+    }};
 
-    tk::println("\t (2/3) Reading from %s...", CONFIG_PATH);
-    config.ConfigureFrom(CONFIG_PATH);
+    tk::println("Running %d pre-run tasks...", tasks.size());
 
-    {
-        const char* msg = config.GetBSON()->GetStringFromRoot("test_field");
-        tk::println("Found msg: %s", msg);
+    for (size_t i = 0; i < tasks.size(); i++) {
+        tasks[i](i, tasks.size());
     }
-
-    // set up additional gimmick profiles
-    tk::println("\t (3/3) Setting up additional gimmick profiles...");
-    SetupAdditionalGimmickProfiles();
 
     tk::println("Done with pre-run tasks.");
 
     Game::Run();
 }
+
 }
 
 // Hook into main()

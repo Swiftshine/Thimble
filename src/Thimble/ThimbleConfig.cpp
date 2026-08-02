@@ -18,22 +18,19 @@ ThimbleConfig& ThimbleConfig::Instance() {
 }
 
 void ThimbleConfig::ConfigureFrom(const char* pFilepath) {
-    gfl::ResFileObject res = gfl::ResArchivedFileInfo::OpenFileFromArchive("thimble/config.bson", 0);
-    tk::println("Read from %s", pFilepath);
+    gfl::ResFileObject res = gfl::ResArchivedFileInfo::OpenFileFromArchive(pFilepath, 0);
 
     Bson* bson = reinterpret_cast<Bson*>(gfl::Alloc(gfl::HeapID::Work, sizeof(Bson), 4));
 
     if (bson != nullptr) {
-        tk::println("Constructed new Bson object");
         mBson = bson;
     } else {
-        tk::println("Failed to construct Bson object");
+        tk::fatal("Failed to construct Bson object!");
         mBson = nullptr;
         return;
     }
 
     mBson->ParseFromFileInfo(res);
-    tk::println("Parsed from file info");
 }
 
 const Bson* ThimbleConfig::GetBSON() const {
