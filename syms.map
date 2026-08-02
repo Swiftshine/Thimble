@@ -16,6 +16,19 @@
     // Game::Run()
     _ZN4Game3RunEv = 0x02BBE37C;
 
+/* GameManager */
+    // GameManager::sInstance
+    _ZN11GameManager9sInstanceE = 0x102A7714;
+
+    // GameManager::GetNumPlayers() const
+    _ZNK11GameManager13GetNumPlayersEv = 0x02118518;
+
+    // GameManager::GetObjectManager() const
+    _ZNK11GameManager16GetObjectManagerEv = 0x021185A0;
+
+    // GameManager::GetPlayer(unsigned long) const
+    _ZNK11GameManager9GetPlayerEm = 0x020077F8;
+
 /* gfl */
     // gfl::Alloc(gfl::HeapID, unsigned long, unsigned long)
     _ZN3gfl5AllocENS_6HeapIDEmm = 0x02BBF7A0;
@@ -36,12 +49,18 @@
     _Znwm = 0x02BC0D7C;
     // operator new[](unsigned long)
     _Znam = 0x02BC0D7C;
-
     // operator delete(void*)
     _ZdlPv = 0x02BC0DD4;
     // operator delete[](void*)
     _ZdaPv = 0x02BC0DD4;
 
+/* Player */
+    // Player::GetPlEggCtrl() const
+    _ZNK6Player12GetPlEggCtrlEv = 0x028EEF1C;
+
+/* PlEggCtrl */
+    // PlEggCtrl::GetNumAttachedYarnBalls() const
+    _ZNK9PlEggCtrl23GetNumAttachedYarnBallsEv = 0x0291BC6C;
 /* R */
     // RegisterGimmickProfile(char const*, unsigned int, unsigned int, void (*)(GimmickProfile*, char const*, unsigned int, unsigned int))
     _Z22RegisterGimmickProfilePKcjjPFvP14GimmickProfileS0_jjE = 0x02167B9C;

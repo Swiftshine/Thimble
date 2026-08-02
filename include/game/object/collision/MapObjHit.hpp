@@ -5,7 +5,6 @@
 
 #include <object/collision/IObjHitCB.hpp>
 
-class MapObject;
 class MapObjHit {
 public:
     struct Collision {
@@ -31,7 +30,7 @@ public:
 
     SIZE_ASSERT(CollisionDefinition, 0x38);
 
-    MapObjHit(MapObject* pOwner, IObjHitCB* pCallback);
+    MapObjHit(class MapObject* pOwner, IObjHitCB* pCallback);
     /* 0x0C */ virtual ~MapObjHit();
     /* 0x14 */ virtual void SetMatrix(const gfl::Matrix34& rMtx);
     /* 0x1C */ virtual void vf1C();

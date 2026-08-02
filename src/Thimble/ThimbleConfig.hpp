@@ -16,6 +16,7 @@ public:
     const Bson* GetBSON() const;
 private:
     gfl::Pointer<Bson> mBson;
+    // todo: make a cache
 };
 
 }

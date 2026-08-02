@@ -10,7 +10,8 @@
     IncludeDirs: [
         'include',
         'include/game',
-        'include/gfl'
+        'include/gfl',
+        'src',
     ],
     BuildOptions: [],
     Targets: {
