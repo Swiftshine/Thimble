@@ -1,5 +1,14 @@
 @addresses_from "00050000-10184D00"
 
+/* Bson */
+    // Bson::Bson()
+    _ZN4BsonC1Ev = 0x02Bb82B34;
+    // Bson::~Bson()
+    _ZN4BsonD1Ev = 0x02B82BF8;
+    // Bson::GetStringFromRoot(char const*, char const*) const
+    _ZNK4Bson17GetStringFromRootEPKcS1_ = 0x02B83290;
+    // Bson::ParseFromFileInfo(gfl::ResFileObject const&)
+    _ZN4Bson17ParseFromFileInfoERKN3gfl13ResFileObjectE = 0x02B82E10;
 /* C STL */
     ceilf = 0x02D072BC;
 
@@ -8,8 +17,8 @@
     _ZN4Game3RunEv = 0x02BBE37C;
 
 /* gfl */
-    // gfl::Alloc(unsigned char, unsigned long, unsigned int)
-    _ZN3gfl5AllocEhmj = 0x02BBF7A0;
+    // gfl::Alloc(gfl::HeapID, unsigned long, unsigned long)
+    _ZN3gfl5AllocENS_6HeapIDEmm = 0x02BBF7A0;
 
     // gfl::Free(void*)
     _ZN3gfl4FreeEPv = 0x02BBF9F8;
@@ -32,3 +41,7 @@
     _ZdlPv = 0x02BC0DD4;
     // operator delete[](void*)
     _ZdaPv = 0x02BC0DD4;
+
+/* R */
+    // RegisterGimmickProfile(char const*, unsigned int, unsigned int, void (*)(GimmickProfile*, char const*, unsigned int, unsigned int))
+    _Z22RegisterGimmickProfilePKcjjPFvP14GimmickProfileS0_jjE = 0x02167B9C;

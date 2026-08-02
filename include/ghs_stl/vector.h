@@ -3,6 +3,6 @@
 namespace ghs::std {
     template <typename T>
     struct vector {
-        char contents[0x20];
+        char contents[0x10];
     };
 }

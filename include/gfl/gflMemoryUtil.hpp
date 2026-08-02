@@ -9,9 +9,6 @@ namespace gfl {
     void* Memset(void* dst, char data, size_t size);
     void Memclear(void* dst, size_t size);
 
-    void* Alloc(u8 heapID, size_t size, size_t align);
-    void Free(void* ptr);
-
     enum class HeapID : u8 {
         Lib                 = 1,
         String              = 3,
@@ -24,6 +21,9 @@ namespace gfl {
         Resource            = 11,
         SubResource         = 12,
     };
+
+    void* Alloc(HeapID heapID, size_t size, size_t align);
+    void Free(void* ptr);
 }
 
 void* operator new(size_t size, u8 heapID);
