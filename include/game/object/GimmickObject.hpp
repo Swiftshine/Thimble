@@ -1,0 +1,130 @@
+#pragma once
+
+#include <object/MapObject.hpp>
+#include <object/control/DelaySpawnerActCtrl.hpp>
+#include <object/misc/ObjectCollection.hpp>
+
+struct GimmickBuildInfo;
+
+class GimmickObject : public MapObject {
+public:
+    GimmickObject(GimmickBuildInfo* pBuildInfo, const char* pName);
+    ~GimmickObject();
+    
+    /* 0x014 */ virtual bool ObjectCast(ObjectTypeInfo<YsGameObj>* pTypeInfo, YsHandleObj* pHandleObj) override;
+    /* 0x01C */ virtual bool OnCollision(ObjHit* pHitSelf, ObjHit* pHitOther, const gfl::Vec3& rPosition) override;
+    /* 0x024 */ virtual void vf24() override;
+    /* 0x02C */ virtual void Init() override;
+    /* 0x034 */ virtual void vf34() override;
+    /* 0x03C */ virtual void vf3C() override;
+    /* 0x044 */ virtual void vf44() override;
+    /* 0x04C */ virtual void vf4C() override;
+    /* 0x054 */ virtual void vf54() override;
+    /* 0x05C */ virtual void vf5C() override;
+    /* 0x064 */ virtual void vf64() override;
+    /* 0x06C */ virtual void vf6C() override;
+    /* 0x074 */ virtual void vf74() override;
+    /* 0x07C */ virtual void vf7C() override;
+    /* 0x084 */ virtual void vf84() override;
+    /* 0x08C */ virtual void vf8C() override;
+    /* 0x094 */ virtual void vf94() override;
+    /* 0x09C */ virtual void vf9C() override;
+    /* 0x0A4 */ virtual void vfA4() override;
+    /* 0x0AC */ virtual void vfAC() override;
+    /* 0x0B4 */ virtual void vfB4() override;
+    /* 0x0BC */ virtual void vfBC() override;
+    /* 0x0C4 */ virtual void vfC4() override;
+    /* 0x0CC */ virtual void vfCC() override;
+    /* 0x0D4 */ virtual void vfD4() override;
+    /* 0x0DC */ virtual void vfDC() override;
+    /* 0x0E4 */ virtual void vfE4() override;
+    /* 0x0EC */ virtual void vfEC() override;
+    /* 0x0F4 */ virtual void vfF4() override;
+    /* 0x0FC */ virtual void vfFC() override;
+    /* 0x11C */ virtual void vf11C() override;
+    /* 0x124 */ virtual void vf124() override;
+    /* 0x144 */ virtual void SetOtherPosition(const gfl::Vec3& rPosition);
+    /* 0x14C */ virtual const gfl::Vec3& GetOtherPosition() const;
+    /* 0x154 */ virtual void vf154() override;
+    /* 0x15C */ virtual void vf15C() override;
+    /* 0x164 */ virtual void vf164() override;
+    /* 0x16C */ virtual void vf16C() override;
+    /* 0x194 */ virtual void vf194() override;
+    /* 0x19C */ virtual void vf19C() override;
+    /* 0x1A4 */ virtual void vf1A4() override;
+    /* 0x1AC */ virtual void vf1AC() override;
+    /* 0x1B4 */ virtual void vf1B4() override;
+    /* 0x1BC */ virtual void vf1BC() override;
+    /* 0x1C4 */ virtual void vf1C4() override;
+    /* 0x1CC */ virtual void vf1CC() override;
+    /* 0x1D4 */ virtual void vf1D4() override;
+    /* 0x1DC */ virtual void Update() override;
+    /* 0x1E4 */ virtual void vf1E4() override;
+    /* 0x1F4 */ virtual void vf1F4() override;
+    /* 0x1FC */ virtual void vf1FC() override;
+    /* 0x204 */ virtual void vf204() override;
+    /* 0x20C */ virtual void vf20C() override;
+    /* 0x214 */ virtual void vf214() override;
+    /* 0x21C */ virtual void vf21C() override;
+    /* 0x224 */ virtual void vf224() override;
+    /* 0x22C */ virtual void vf22C() override;
+    /* 0x234 */ virtual void vf234() override;
+    /* 0x23C */ virtual void vf23C() override;
+    /* 0x244 */ virtual void vf244() override;
+    /* 0x24C */ virtual void vf24C() override;
+    /* 0x254 */ virtual void vf254() override;
+    /* 0x25C */ virtual void OnDelete() override;
+    /* 0x26C */ virtual void vf26C() override;
+    /* 0x274 */ virtual void vf274() override;
+    /* 0x27C */ virtual void vf27C() override;
+    /* 0x284 */ virtual void vf284() override;
+    /* 0x28C */ virtual void vf28C() override;
+    /* 0x294 */ virtual void vf294() override;
+    /* 0x29C */ virtual void vf29C() override;
+    /* 0x2A4 */ virtual void vf2A4() override;
+    /* 0x2AC */ virtual void vf2AC() override;
+    /* 0x2B4 */ virtual void vf2B4() override;
+    /* 0x2BC */ virtual void vf2BC() override;
+    /* 0x2C4 */ virtual void vf2C4() override;
+    /* 0x2CC */ virtual void vf2CC() override;
+    /* 0x2D4 */ virtual void vf2D4() override;
+    /* 0x2DC */ virtual void vf2DC() override;
+    /* 0x2E4 */ virtual void vf2E4() override;
+    /* 0x2EC */ virtual void vf2EC() override;
+    /* 0x2F4 */ virtual void vf2F4() override;
+    /* 0x2FC */ virtual void vf2FC() override;
+    /* 0x304 */ virtual void vf304() override;
+    /* 0x30C */ virtual void vf30C() override;
+    /* 0x314 */ virtual void vf314() override;
+    /* 0x31C */ virtual void vf31C() override;
+    /* 0x324 */ virtual void vf324() override;
+    /* 0x32C */ virtual void vf32C() override;
+    /* 0x334 */ virtual void vf334() override;
+    /* 0x33C */ virtual void vf33C() override;
+    /* 0x344 */ virtual void vf344() override;
+    /* 0x34C */ virtual void vf34C() override;
+    /* 0x354 */ virtual void vf354() override;
+    /* 0x35C */ virtual void vf35C() override;
+    /* 0x364 */ virtual void vf364() override;
+    /* 0x36C */ virtual void vf36C() override;
+    /* 0x374 */ virtual void vf374() override;
+    /* 0x37C */ virtual void vf37C() override;
+    /* 0x384 */ virtual void vf384() override;
+    /* 0x38C */ virtual void vf38C() override;
+    /* 0x394 */ virtual void vf394() override;
+    /* 0x39C */ virtual void vf39C() override;
+    /* 0x3A4 */ virtual void vf3A4() override;
+    /* 0x3AC */ virtual void vf3AC() override;
+    /* 0x3B4 */ virtual void vf3B4() override;
+    /* 0x3BC */ virtual void vf3BC() override;
+    /* 0x3C4 */ virtual void vf3C4() override;
+    /* 0x3CC */ virtual void vf3CC() override;
+public:
+    /* 0x118 */ DelaySpawnerActCtrl* mDelaySpawnerActCtrl;
+    /* 0x11C */ u32 mGimmickID;
+    /* 0x120 */ GimmickBuildInfo* mBuildInfo;
+    /* 0x124 */ ObjectCollection mObjectCollection;
+    /* 0x174 */ gfl::Vec3 mPositionOffset;
+};
+
+SIZE_ASSERT(GimmickObject, 0x180);
