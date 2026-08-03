@@ -5,6 +5,8 @@
     _ZN4BsonC1Ev = 0x02Bb82B34;
     // Bson::~Bson()
     _ZN4BsonD1Ev = 0x02B82BF8;
+    // Bson::GetIntFromRoot(char const*, int) const
+    _ZNK4Bson14GetIntFromRootEPKci = 0x02B833A8;
     // Bson::GetStringFromRoot(char const*, char const*) const
     _ZNK4Bson17GetStringFromRootEPKcS1_ = 0x02B83290;
     // Bson::ParseFromFileInfo(gfl::ResFileObject const&)

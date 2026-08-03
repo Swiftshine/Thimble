@@ -1,44 +1,52 @@
 #include <telkin/Telkin.h>
 #include "Thimble/ThimbleConfig.hpp"
-#include "telkin/Assembly.h"
 
 // Prevent the game from switching into 30fps mode on the world map
 #if !defined(__CONSOLE__) // This does not work on console
     tPatch32u(0x02B38D7C, tk::ppc::b(0x20));
 #endif
 
+inline void PatchInstruction(u32 address, u32& instr) {
+    // US addr
+    const u32 CONSOLE_TEXT_OFFSET = 0x0C700000;
+    #if defined(__CONSOLE__)
+        address += CONSOLE_TEXT_OFFSET;
+    #endif
 
-// Remove the yarn ball limit
-#include <object/Player.hpp>
-#include <manager/GameManager.hpp>
-const u16 EGG_LIMIT = 100;
-size_t GetAvailableYarnBallSlots() {
-    size_t slotsRemaining = 0;
+    tk::privilegedWrite((const void*)address, (const void*)&instr, sizeof(u32));
+}
 
-    for (size_t i = 0; i < GameManager::sInstance->GetNumPlayers(); i++) {
-        Player* player = GameManager::sInstance->GetPlayer(i);
-        PlEggCtrl* eggCtrl = player->GetPlEggCtrl();
+#define PATCH_INSTRUCTION(address, src, num_bytes) tk::priviledgedWrite((const void*)(address), (const void*)(src), num_bytes)
+namespace th {
+    void PatchInstructionsForTweaks() {
 
-        size_t numReserved = eggCtrl->mReservedYarnBalls.size();
-        size_t numCurrentlyHeld = eggCtrl->GetNumAttachedYarnBalls();
+        {
+            const u16 DEFAULT_EGG_LIMIT = 6;
+            const u16 limit = (u16) th::ThimbleConfig::Instance()
+                .GetBSON()
+                ->GetIntFromRoot("yarn_ball_limit", DEFAULT_EGG_LIMIT);
 
-        slotsRemaining += EGG_LIMIT - (numCurrentlyHeld + numReserved);
+            // PlEggCtrl::CreateFollowingEgg
+            {
+                u32 instr = tk::ppc::cmplwi(tk::ppc::GPR::r8, 0);
+                instr |= limit;
+                PatchInstruction(0x0291DE8C, instr);
+            }
+
+            // GmkBox::ShouldSpawnYarnBall
+            {
+                u32 instr = tk::ppc::cmplwi(tk::ppc::GPR::r0, 0);
+                instr |= limit;
+                PatchInstruction(0x02539C4C, instr);
+            }
+
+            // GmkEggBox::GetAvailableYarnBallSlots
+            {
+                // subfic r12, r0, ...
+                u32 instr = 0x21800000;
+                instr |= limit;
+                PatchInstruction(0x02539BF8, instr);
+            }
+        }
     }
-
-    return slotsRemaining;
 }
-
-#include <object/gimmick/GmkEggBox.hpp>
-bool ShouldSpawnYarnBall(GmkEggBox* pBox) {
-    size_t count = pBox->mOtherEggCtrl->mList.size();
-    size_t slots = GetAvailableYarnBallSlots();
-    return count < EGG_LIMIT && count < slots;
-}
-
-tBranch(0x02539C58, GetAvailableYarnBallSlots, tk::BranchType::bl);
-tBranch(0x0253A480, ShouldSpawnYarnBall, tk::BranchType::bl);
-tBranch(0x0253A4FC, ShouldSpawnYarnBall, tk::BranchType::bl);
-tBranch(0x0253A6B0, ShouldSpawnYarnBall, tk::BranchType::bl);
-
-// PlEggCtrl::CreateFollowingEgg
-tPatch32u(0x0291DE8C, tk::ppc::cmplwi(tk::ppc::GPR::r8, EGG_LIMIT));

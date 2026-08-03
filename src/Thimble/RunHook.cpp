@@ -8,12 +8,13 @@
 namespace th {
 const char* CONFIG_PATH = "thimble/config.bson";
 
-extern void SetupAdditionalGimmickProfiles();
+void SetupAdditionalGimmickProfiles();
+void PatchInstructionsForTweaks();
 
 void RunHook() {
     using Task = void(*)(size_t, size_t);
 
-    auto tasks = std::array<Task, 2>{ {
+    auto tasks = std::array<Task, 3>{ {
         [](size_t i, size_t total) {
             tk::println("\t(%d/%d) Setting up ThimbleConfig...", i + 1, total);
             ThimbleConfig::Instance().ConfigureFrom(CONFIG_PATH);
@@ -21,6 +22,10 @@ void RunHook() {
         [](size_t i, size_t total) {
             tk::println("\t(%d/%d) Setting up additional gimmick profiles...", i + 1, total);
             SetupAdditionalGimmickProfiles();
+        },
+        [](size_t i, size_t total) {
+            tk::println("\t(%d/%d) Patching instructions for misc. tweaks...", i + 1, total);
+            PatchInstructionsForTweaks();
         }
     }};
 

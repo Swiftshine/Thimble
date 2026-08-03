@@ -51,7 +51,7 @@ public:
     float GetFloat(ObjectNode* pObject, const char* pNodeName, float defaultValue = 0.0f);
     int GetInt(ObjectNode* pObject, const char* pNodeName, int defaultValue = 0);
     const char* GetStringFromRoot(const char* pKey, const char* defaultValue = "") const;
-
+    int GetIntFromRoot(const char* pKey, int defaultValue = 0) const;
 public:
     /* 0x00 */ ghs::std::string mFilepath;
     /* 0x20 */ void* mResArchivedFileInfo; // of type gfl::ResArchivedFileInfo
