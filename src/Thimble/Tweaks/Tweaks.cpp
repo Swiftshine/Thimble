@@ -19,7 +19,7 @@ inline void PatchInstruction(u32 address, u32& instr) {
 #define PATCH_INSTRUCTION(address, src, num_bytes) tk::priviledgedWrite((const void*)(address), (const void*)(src), num_bytes)
 namespace th {
     void PatchInstructionsForTweaks() {
-
+        using namespace tk::ppc;
         {
             const u16 DEFAULT_EGG_LIMIT = 6;
             const u16 limit = (u16) th::ThimbleConfig::Instance()
@@ -28,14 +28,14 @@ namespace th {
 
             // PlEggCtrl::CreateFollowingEgg
             {
-                u32 instr = tk::ppc::cmplwi(tk::ppc::GPR::r8, 0);
+                u32 instr = cmplwi(GPR::r8, 0);
                 instr |= limit;
                 PatchInstruction(0x0291DE8C, instr);
             }
 
             // GmkBox::ShouldSpawnYarnBall
             {
-                u32 instr = tk::ppc::cmplwi(tk::ppc::GPR::r0, 0);
+                u32 instr = cmplwi(GPR::r0, 0);
                 instr |= limit;
                 PatchInstruction(0x02539C4C, instr);
             }
