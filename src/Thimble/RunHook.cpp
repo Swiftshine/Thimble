@@ -1,9 +1,8 @@
 #include <telkin/Telkin.h>
 #include <game/Game.hpp>
-#include "ThimbleConfig.hpp"
+#include <thimble/ThimbleConfig.hpp>
 
 #include <array>
-#include <functional>
 
 namespace th {
 const char* CONFIG_PATH = "thimble/config.bson";

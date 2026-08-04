@@ -11,8 +11,16 @@
     _ZNK4Bson17GetStringFromRootEPKcS1_ = 0x02B83290;
     // Bson::ParseFromFileInfo(gfl::ResFileObject const&)
     _ZN4Bson17ParseFromFileInfoERKN3gfl13ResFileObjectE = 0x02B82E10;
+
 /* C STL */
     ceilf = 0x02D072BC;
+
+/* G */
+    // GetCategoryByObjectID(ObjectID)
+    _Z21GetCategoryByObjectID8ObjectID = 0x02818428;
+
+    // GetObjectIDByCategoryAndLocalID(YsGameObj::ObjectCategory, unsigned int)
+    _Z31GetObjectIDByCategoryAndLocalIDN9YsGameObj14ObjectCategoryEj  = 0x028184AC;
 
 /* Game */
     // Game::Run()
@@ -63,6 +71,7 @@
 /* PlEggCtrl */
     // PlEggCtrl::GetNumAttachedYarnBalls() const
     _ZNK9PlEggCtrl23GetNumAttachedYarnBallsEv = 0x0291BC6C;
+
 /* R */
-    // RegisterGimmickProfile(char const*, unsigned int, unsigned int, void (*)(GimmickProfile*, char const*, unsigned int, unsigned int))
-    _Z22RegisterGimmickProfilePKcjjPFvP14GimmickProfileS0_jjE = 0x02167B9C;
+    // RegisterGimmickProfile(char const*, ObjectID, GimmickID, void (*)(GimmickProfile*, char const*, unsigned int, unsigned int))
+    _Z22RegisterGimmickProfilePKc8ObjectID9GimmickIDPFvP14GimmickProfileS0_jjE = 0x02167B9C;

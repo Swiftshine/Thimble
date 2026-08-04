@@ -1,22 +1,12 @@
 #include <telkin/Telkin.h>
-#include "Thimble/ThimbleConfig.hpp"
+#include <thimble/ThimbleConfig.hpp>
+#include <thimble/ThimbleUtil.hpp>
 
 // Prevent the game from switching into 30fps mode on the world map
 #if !defined(__CONSOLE__) // This does not work on console
     tPatch32u(0x02B38D7C, tk::ppc::b(0x20));
 #endif
 
-inline void PatchInstruction(u32 address, u32& instr) {
-    // US addr
-    const u32 CONSOLE_TEXT_OFFSET = 0x0C700000;
-    #if defined(__CONSOLE__)
-        address += CONSOLE_TEXT_OFFSET;
-    #endif
-
-    tk::privilegedWrite((const void*)address, (const void*)&instr, sizeof(u32));
-}
-
-#define PATCH_INSTRUCTION(address, src, num_bytes) tk::priviledgedWrite((const void*)(address), (const void*)(src), num_bytes)
 namespace th {
     void PatchInstructionsForTweaks() {
         using namespace tk::ppc;

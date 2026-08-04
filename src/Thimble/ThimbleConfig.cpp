@@ -2,7 +2,7 @@
 #include <gfl/gflResArchivedFileInfo.hpp>
 #include <gfl/gflMemoryUtil.hpp>
 #include <game/file/Bson.hpp>
-#include "ThimbleConfig.hpp"
+#include <thimble/ThimbleConfig.hpp>
 
 using namespace th;
 
