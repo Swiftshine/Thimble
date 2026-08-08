@@ -1,14 +1,3 @@
-#define TK_IMPL_STRLEN
+#define TK_IMPL_SQRTF
 #define TK_IMPL_MEMCPY
-#define TK_IMPL_MEMMOVE
-#define TK_IMPL_MEMCHR
-#define TK_IMPL_MEMCMP
-#define TK_IMPL_MEMSET
-#define TK_IMPL_STRCMP
-#define TK_IMPL_STRTOL
-#define TK_IMPL_ATOF
-#define TK_IMPL_ISALPHA
-#define TK_IMPL_ISUPPER
-#define TK_IMPL_ISSPACE
-#define TK_IMPL_ISDIGIT
 #include <telkin/Runtime.h>

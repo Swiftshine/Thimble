@@ -1,7 +1,7 @@
 #pragma once
 
+#include <ghs_stl/list.hpp>
 #include <types.h>
-#include <ghs_stl/list.h>
 
 namespace gfl {
 
@@ -11,6 +11,7 @@ class Anim;
 class AnimBlend {
 public:
     virtual ~AnimBlend();
+
 private:
     /* 0x00 */ Model* mModel;
     /* 0x04 */ Anim* mAnim;
@@ -26,4 +27,4 @@ private:
 
 SIZE_ASSERT(AnimBlend, 0x2C);
 
-}
+} // namespace gfl

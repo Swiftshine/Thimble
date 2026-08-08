@@ -1,8 +1,8 @@
 #pragma once
 
-#include <ghs_stl/vector.h>
-#include <gflAnimObj.hpp>
 #include <gflAnimBlend.hpp>
+#include <gflAnimObj.hpp>
+#include <ghs_stl/vector.hpp>
 
 namespace gfl {
 
@@ -62,4 +62,4 @@ private:
 };
 
 SIZE_ASSERT(Anim, 0x50);
-}
+} // namespace gfl

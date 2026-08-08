@@ -1,0 +1,31 @@
+---
+BasedOnStyle: LLVM
+Language: Cpp
+
+# pointer alignment
+DerivePointerAlignment: false
+PointerAlignment: Left
+
+# line length limits
+ColumnLimit: 120
+
+# indentation rules
+IndentWidth: 4
+TabWidth: 4
+AccessModifierOffset: -4
+
+# include sorting options
+SortIncludes: CaseSensitive
+IncludeBlocks: Regroup
+
+# ctor initialisers
+BreakConstructorInitializers: BeforeComma
+PackConstructorInitializers: Never
+ConstructorInitializerIndentWidth: 4
+
+# braces
+BreakBeforeBraces: Attach
+
+# struct initialisations
+SpaceBeforeCpp11BracedList: true
+---

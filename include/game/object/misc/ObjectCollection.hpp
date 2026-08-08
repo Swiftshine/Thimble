@@ -1,12 +1,11 @@
 #pragma once
 
-#include <ghs_stl/vector.h>
-
+#include <ghs_stl/vector.hpp>
 #include <graphics/YsModelControl2.hpp>
+#include <object/MapObject.hpp>
 #include <object/collision/ColObj.hpp>
 #include <object/collision/MapObjHit.hpp>
 #include <object/misc/ChildItem.hpp>
-#include <object/MapObject.hpp>
 
 class ObjectCollection {
 public:
@@ -20,6 +19,7 @@ public:
     void RemoveMapObjHit(MapObjHit*);
     void RemoveMapObject(MapObject*);
     void RemoveChildItem(ChildItem*);
+
 public:
     /* 0x00 */ ghs::std::vector<YsModelControl2*> mModelControls;
     /* 0x10 */ ghs::std::vector<ColObj*> mColObjs;

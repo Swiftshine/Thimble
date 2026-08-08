@@ -1,8 +1,9 @@
 #pragma once
 
 #include "gfl/gflResArchivedFileInfo.hpp"
+
+#include <ghs_stl/string.hpp>
 #include <types.h>
-#include <ghs_stl/string.h>
 
 class Bson {
 private:
@@ -10,18 +11,19 @@ private:
         size_t mOffset;
         size_t mLength;
     };
+
 public:
     enum class NodeType : u32 {
-        Root            = 300,
-        Object          = 301,
-        Array           = 302,
-        Integer         = 303,
-        Float           = 304,
-        String          = 305,
-        Bool            = 306,
-        StringTable     = 400,
-        StringBank      = 500,
-        EndOfFile       = 900,
+        Root = 300,
+        Object = 301,
+        Array = 302,
+        Integer = 303,
+        Float = 304,
+        String = 305,
+        Bool = 306,
+        StringTable = 400,
+        StringBank = 500,
+        EndOfFile = 900,
     };
 
     struct Node {
@@ -52,6 +54,7 @@ public:
     int GetInt(ObjectNode* pObject, const char* pNodeName, int defaultValue = 0);
     const char* GetStringFromRoot(const char* pKey, const char* defaultValue = "") const;
     int GetIntFromRoot(const char* pKey, int defaultValue = 0) const;
+
 public:
     /* 0x00 */ ghs::std::string mFilepath;
     /* 0x20 */ void* mResArchivedFileInfo; // of type gfl::ResArchivedFileInfo

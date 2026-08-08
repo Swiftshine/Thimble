@@ -14,6 +14,8 @@
 
 /* C STL */
     ceilf = 0x02D072BC;
+    rand  = 0x02D05580;
+    sqrtf = 0x02d07490;
 
 /* G */
     // GetCategoryByObjectID(ObjectID)
@@ -54,11 +56,397 @@
         // gfl::ResFileObject::GetFilesize() const
         _ZNK3gfl13ResFileObject11GetFilesizeEv = 0x0217C818;
 
+/* GimmickObject */
+    // GimmickObject::GimmickObject(GimmickBuildInfo*, char const*)
+    _ZN13GimmickObjectC2EP16GimmickBuildInfoPKc = 0x024c57f4;
+
+    // GimmickObject::~GimmickObject()
+    _ZN13GimmickObjectD1Ev = 0x024c5294;
+
+    // GimmickObject::ObjectCast(YsGameObj::ObjectTypeInfo<YsGameObj>*, YsHandleObj*)
+    _ZN13GimmickObject10ObjectCastEPN9YsGameObj14ObjectTypeInfoIS0_EEP11YsHandleObj = 0x024c5394;
+
+    // GimmickObject::OnCollision(ObjHit*, ObjHit*, gfl::Vec3 const&)
+    _ZN13GimmickObject11OnCollisionEP6ObjHitS1_RKN3gfl4Vec3E = 0x024c5a70;
+
+    // GimmickObject::vf24()
+    _ZN13GimmickObject4vf24Ev = 0x024c5a78;
+
+    // GimmickObject::Init()
+    _ZN13GimmickObject4InitEv = 0x024c5650;
+
+    // GimmickObject::vf34()
+    _ZN13GimmickObject4vf34Ev = 0x024c5a7c;
+
+    // GimmickObject::vf3C()
+    _ZN13GimmickObject4vf3CEv = 0x024c5a80;
+
+    // GimmickObject::vf44()
+    _ZN13GimmickObject4vf44Ev = 0x024c5a84;
+
+    // GimmickObject::vf4C()
+    _ZN13GimmickObject4vf4CEv = 0x024c5a88;
+
+    // GimmickObject::vf54()
+    _ZN13GimmickObject4vf54Ev = 0x024c5a8c;
+
+    // GimmickObject::vf5C()
+    _ZN13GimmickObject4vf5CEv = 0x024c5a90;
+
+    // GimmickObject::vf64()
+    _ZN13GimmickObject4vf64Ev = 0x024c5a98;
+
+    // GimmickObject::vf6C()
+    _ZN13GimmickObject4vf6CEv = 0x024c5a9c;
+
+    // GimmickObject::vf74()
+    _ZN13GimmickObject4vf74Ev = 0x024c5aa0;
+
+    // GimmickObject::vf7C()
+    _ZN13GimmickObject4vf7CEv = 0x024c5aa4;
+
+    // GimmickObject::vf84()
+    _ZN13GimmickObject4vf84Ev = 0x024c5aa8;
+
+    // GimmickObject::vf8C()
+    _ZN13GimmickObject4vf8CEv = 0x024c5aac;
+
+    // GimmickObject::vf94()
+    _ZN13GimmickObject4vf94Ev = 0x024c5ab0;
+
+    // GimmickObject::vf9C()
+    _ZN13GimmickObject4vf9CEv = 0x024c5ab4;
+
+    // GimmickObject::vfA4()
+    _ZN13GimmickObject4vfA4Ev = 0x024c5ab8;
+
+    // GimmickObject::vfAC()
+    _ZN13GimmickObject4vfACEv = 0x024c5abc;
+
+    // GimmickObject::vfB4()
+    _ZN13GimmickObject4vfB4Ev = 0x024c5ac0;
+
+    // GimmickObject::vfBC()
+    _ZN13GimmickObject4vfBCEv = 0x024c5ac4;
+
+    // GimmickObject::vfC4()
+    _ZN13GimmickObject4vfC4Ev = 0x024c5ac8;
+
+    // GimmickObject::vfCC()
+    _ZN13GimmickObject4vfCCEv = 0x024c5acc;
+
+    // GimmickObject::vfD4()
+    _ZN13GimmickObject4vfD4Ev = 0x024c5ad0;
+
+    // GimmickObject::vfDC()
+    _ZN13GimmickObject4vfDCEv = 0x024c5ad4;
+
+    // GimmickObject::vfE4()
+    _ZN13GimmickObject4vfE4Ev = 0x024c5ad8;
+
+    // GimmickObject::vfEC()
+    _ZN13GimmickObject4vfECEv = 0x024c5adc;
+
+    // GimmickObject::vfF4()
+    _ZN13GimmickObject4vfF4Ev = 0x024c5ae0;
+
+    // GimmickObject::vfFC()
+    _ZN13GimmickObject4vfFCEv = 0x024c5ae4;
+
+    // GimmickObject::vf11C()
+    _ZN13GimmickObject5vf11CEv = 0x024c5ae8;
+
+    // GimmickObject::vf124()
+    _ZN13GimmickObject5vf124Ev = 0x024c5aec;
+
+    // GimmickObject::SetOtherPosition(gfl::Vec3 const&)
+    _ZN13GimmickObject16SetOtherPositionERKN3gfl4Vec3E = 0x024c542c;
+
+    // GimmickObject::GetOtherPosition() const
+    _ZNK13GimmickObject16GetOtherPositionEv = 0x024c5448;
+
+    // GimmickObject::vf154()
+    _ZN13GimmickObject5vf154Ev = 0x024c5af0;
+
+    // GimmickObject::vf15C()
+    _ZN13GimmickObject5vf15CEv = 0x024c5afc;
+
+    // GimmickObject::vf164()
+    _ZN13GimmickObject5vf164Ev = 0x024c5b00;
+
+    // GimmickObject::vf16C()
+    _ZN13GimmickObject5vf16CEv = 0x024c5b50;
+
+    // GimmickObject::vf194()
+    _ZN13GimmickObject5vf194Ev = 0x024c5b5c;
+
+    // GimmickObject::vf19C()
+    _ZN13GimmickObject5vf19CEv = 0x024c5b60;
+
+    // GimmickObject::vf1A4()
+    _ZN13GimmickObject5vf1A4Ev = 0x024c5b68;
+
+    // GimmickObject::vf1AC()
+    _ZN13GimmickObject5vf1ACEv = 0x024c5b6c;
+
+    // GimmickObject::vf1B4()
+    _ZN13GimmickObject5vf1B4Ev = 0x024c5b74;
+
+    // GimmickObject::vf1BC()
+    _ZN13GimmickObject5vf1BCEv = 0x024c5c74;
+
+    // GimmickObject::vf1C4()
+    _ZN13GimmickObject5vf1C4Ev = 0x024c5b80;
+
+    // GimmickObject::vf1CC()
+    _ZN13GimmickObject5vf1CCEv = 0x024c5b88;
+
+    // GimmickObject::vf1D4()
+    _ZN13GimmickObject5vf1D4Ev = 0x024c5b90;
+
+    // GimmickObject::Update()
+    _ZN13GimmickObject6UpdateEv = 0x024c546c;
+
+    // GimmickObject::vf1E4()
+    _ZN13GimmickObject5vf1E4Ev = 0x024c5b94;
+
+    // GimmickObject::vf1F4()
+    _ZN13GimmickObject5vf1F4Ev = 0x024c570c;
+
+    // GimmickObject::vf1FC()
+    _ZN13GimmickObject5vf1FCEv = 0x024c5b98;
+
+    // GimmickObject::vf204()
+    _ZN13GimmickObject5vf204Ev = 0x024c5b9c;
+
+    // GimmickObject::vf20C()
+    _ZN13GimmickObject5vf20CEv = 0x024c5ba0;
+
+    // GimmickObject::vf214()
+    _ZN13GimmickObject5vf214Ev = 0x024c5ba4;
+
+    // GimmickObject::vf21C()
+    _ZN13GimmickObject5vf21CEv = 0x024c56d4;
+
+    // GimmickObject::vf224()
+    _ZN13GimmickObject5vf224Ev = 0x024c57bc;
+
+    // GimmickObject::vf22C()
+    _ZN13GimmickObject5vf22CEv = 0x024c5ba8;
+
+    // GimmickObject::vf234()
+    _ZN13GimmickObject5vf234Ev = 0x024c5bac;
+
+    // GimmickObject::vf23C()
+    _ZN13GimmickObject5vf23CEv = 0x024c5bb0;
+
+    // GimmickObject::vf244()
+    _ZN13GimmickObject5vf244Ev = 0x024c5bb4;
+
+    // GimmickObject::vf24C()
+    _ZN13GimmickObject5vf24CEv = 0x024c5744;
+
+    // GimmickObject::vf254()
+    _ZN13GimmickObject5vf254Ev = 0x024c577c;
+
+    // GimmickObject::OnDelete()
+    _ZN13GimmickObject8OnDeleteEv = 0x024c5bb8;
+
+    // GimmickObject::vf26C()
+    _ZN13GimmickObject5vf26CEv = 0x024c5bbc;
+
+    // GimmickObject::vf274()
+    _ZN13GimmickObject5vf274Ev = 0x024c5bc0;
+
+    // GimmickObject::vf27C()
+    _ZN13GimmickObject5vf27CEv = 0x024c5bc4;
+
+    // GimmickObject::vf284()
+    _ZN13GimmickObject5vf284Ev = 0x024c5bc8;
+
+    // GimmickObject::vf28C()
+    _ZN13GimmickObject5vf28CEv = 0x024c53b4;
+
+    // GimmickObject::vf294()
+    _ZN13GimmickObject5vf294Ev = 0x024c5bcc;
+
+    // GimmickObject::vf29C()
+    _ZN13GimmickObject5vf29CEv = 0x024c5c1c;
+
+    // GimmickObject::vf2A4()
+    _ZN13GimmickObject5vf2A4Ev = 0x024c5450;
+
+    // GimmickObject::vf2AC()
+    _ZN13GimmickObject5vf2ACEv = 0x024c5c84;
+
+    // GimmickObject::vf2B4()
+    _ZN13GimmickObject5vf2B4Ev = 0x024c545c;
+
+    // GimmickObject::vf2BC()
+    _ZN13GimmickObject5vf2BCEv = 0x024c5464;
+
+    // GimmickObject::vf2C4()
+    _ZN13GimmickObject5vf2C4Ev = 0x024c5c88;
+
+    // GimmickObject::vf2CC()
+    _ZN13GimmickObject5vf2CCEv = 0x024c5c8c;
+
+    // GimmickObject::vf2D4()
+    _ZN13GimmickObject5vf2D4Ev = 0x024c5c90;
+
+    // GimmickObject::vf2DC()
+    _ZN13GimmickObject5vf2DCEv = 0x024c5c98;
+
+    // GimmickObject::vf2E4()
+    _ZN13GimmickObject5vf2E4Ev = 0x024c5c9c;
+
+    // GimmickObject::vf2EC()
+    _ZN13GimmickObject5vf2ECEv = 0x024c5ca0;
+
+    // GimmickObject::vf2F4()
+    _ZN13GimmickObject5vf2F4Ev = 0x024c5cac;
+
+    // GimmickObject::vf2FC()
+    _ZN13GimmickObject5vf2FCEv = 0x024c5cb0;
+
+    // GimmickObject::vf304()
+    _ZN13GimmickObject5vf304Ev = 0x024c5cb4;
+
+    // GimmickObject::vf30C()
+    _ZN13GimmickObject5vf30CEv = 0x024c5cc0;
+
+    // GimmickObject::vf314()
+    _ZN13GimmickObject5vf314Ev = 0x024c5ccc;
+
+    // GimmickObject::vf31C()
+    _ZN13GimmickObject5vf31CEv = 0x024c5cd0;
+
+    // GimmickObject::vf324()
+    _ZN13GimmickObject5vf324Ev = 0x024c5cd4;
+
+    // GimmickObject::vf32C()
+    _ZN13GimmickObject5vf32CEv = 0x024c5ce0;
+
+    // GimmickObject::vf334()
+    _ZN13GimmickObject5vf334Ev = 0x024c5ce8;
+
+    // GimmickObject::vf33C()
+    _ZN13GimmickObject5vf33CEv = 0x024c5cec;
+
+    // GimmickObject::vf344()
+    _ZN13GimmickObject5vf344Ev = 0x024c5cf0;
+
+    // GimmickObject::vf34C()
+    _ZN13GimmickObject5vf34CEv = 0x024c5cfc;
+
+    // GimmickObject::vf354()
+    _ZN13GimmickObject5vf354Ev = 0x024c5cf4;
+
+    // GimmickObject::vf35C()
+    _ZN13GimmickObject5vf35CEv = 0x024c5d00;
+
+    // GimmickObject::vf364()
+    _ZN13GimmickObject5vf364Ev = 0x024c5d08;
+
+    // GimmickObject::vf36C()
+    _ZN13GimmickObject5vf36CEv = 0x024c5d0c;
+
+    // GimmickObject::vf374()
+    _ZN13GimmickObject5vf374Ev = 0x024c5d14;
+
+    // GimmickObject::vf37C()
+    _ZN13GimmickObject5vf37CEv = 0x024c5d1c;
+
+    // GimmickObject::vf384()
+    _ZN13GimmickObject5vf384Ev = 0x024c5d20;
+
+    // GimmickObject::vf38C()
+    _ZN13GimmickObject5vf38CEv = 0x024c5d24;
+
+    // GimmickObject::vf394()
+    _ZN13GimmickObject5vf394Ev = 0x024c5d2c;
+
+    // GimmickObject::vf39C()
+    _ZN13GimmickObject5vf39CEv = 0x024c5d34;
+
+    // GimmickObject::vf3A4()
+    _ZN13GimmickObject5vf3A4Ev = 0x024c5d3c;
+
+    // GimmickObject::vf3AC()
+    _ZN13GimmickObject5vf3ACEv = 0x024c5d44;
+
+    // GimmickObject::vf3B4()
+    _ZN13GimmickObject5vf3B4Ev = 0x024c55f8;
+
+    // GimmickObject::vf3BC()
+    _ZN13GimmickObject5vf3BCEv = 0x024c5d48;
+
+    // GimmickObject::vf3C4()
+    _ZN13GimmickObject5vf3C4Ev = 0x024c5d4c;
+
+    // GimmickObject::vf3CC()
+    _ZN13GimmickObject5vf3CCEv = 0x024c5d50;
+
+    // non-virtual thunk to GimmickObject::OnCollision(ObjHit*, ObjHit*, gfl::Vec3 const&)
+    _ZThn16_N13GimmickObject11OnCollisionEP6ObjHitS1_RKN3gfl4Vec3E = 0x024c538c;
+
+/* MapObject */
+    // MapObject::UpdateGraphics()
+    _ZN9MapObject14UpdateGraphicsEv = 0x0280d3d4;
+
+    // MapObject::UpdateMatrix()
+    _ZN9MapObject12UpdateMatrixEv = 0x0280d450;
+
+    // MapObject::UpdateModelMatrix()
+    _ZN9MapObject17UpdateModelMatrixEv = 0x0280d81c;
+
+    // MapObject::SetPrimaryTaskFlags(bool, unsigned int)
+    _ZN9MapObject19SetPrimaryTaskFlagsEbj = 0x0280de28;
+
+    // MapObject::vf134()
+    _ZN9MapObject5vf134Ev = 0x0280dfa0;
+
+    // MapObject::SetPosition(gfl::Vec3 const&)
+    _ZN9MapObject11SetPositionERKN3gfl4Vec3E = 0x0280e17c;
+
+    // MapObject::vf174()
+    _ZN9MapObject5vf174Ev = 0x0280e978;
+
+    // MapObject::vf17C()
+    _ZN9MapObject5vf17CEv = 0x0280ec6c;
+
+    // MapObject::vf184()
+    _ZN9MapObject5vf184Ev = 0x0280efd0;
+
+    // MapObject::vf18C()
+    _ZN9MapObject5vf18CEv = 0x0280f314;
+
+    // MapObject::vf1EC()
+    _ZN9MapObject5vf1ECEv = 0x0280fa88;
+
+    // MapObject::vf264()
+    _ZN9MapObject5vf264Ev = 0x0280f780;
+
+/* ObjectManager */
+    // ObjectManager::sInstance
+    _ZN13ObjectManager9sInstanceE = 0x102b473c;
+
+    // ObjectManager::FindNearestPlayer(gfl::Vec3 const&)
+    _ZN13ObjectManager17FindNearestPlayerERKN3gfl4Vec3E = 0x02819a18;
+
+    // ObjectManager::SpawnPlEgg(unsigned int, gfl::Vec3 const&, gfl::Vec3 const&, PlEgg::BuildInfo const*, OtherEggCtrl*)
+    _ZN13ObjectManager10SpawnPlEggEjRKN3gfl4Vec3ES3_PKN5PlEgg9BuildInfoEP12OtherEggCtrl = 0x0291ab4c;
+
+/* OtherEggCtrl */
+    // vtable for OtherEggCtrl
+    _ZTV12OtherEggCtrl = 0x10210610;
 /* Operator New/Delete */
     // operator new(unsigned long)
     _Znwm = 0x02BC0D7C;
     // operator new[](unsigned long)
     _Znam = 0x02BC0D7C;
+    // operator new(unsigned long, gfl::HeapID)
+    _ZnwmN3gfl6HeapIDE = 0x02BC0DAC;
     // operator delete(void*)
     _ZdlPv = 0x02BC0DD4;
     // operator delete[](void*)

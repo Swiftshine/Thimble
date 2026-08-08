@@ -1,15 +1,12 @@
 #pragma once
 
-#include <ghs_stl/list.h>
-
 #include <gfl/gflScene.hpp>
-
-#include <object/YsHandle.hpp>
+#include <ghs_stl/list.hpp>
 #include <object/PlEgg.hpp>
+#include <object/YsHandle.hpp>
 
 class PlEggCtrl {
 public:
-
     size_t GetNumAttachedYarnBalls() const;
 
     /* 0x00 */ YsHandle mHandle;

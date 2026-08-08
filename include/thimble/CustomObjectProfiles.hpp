@@ -1,25 +1,32 @@
 #pragma once
 
 #include <game/object/ObjectProfile.hpp>
-#include <thimble/CustomObjectProfileHeaders.hpp>
 
-typedef void (* GimmickProfileInitFunction)(GimmickProfile* pProfile, const char* pName, u32 objectID, u32 gimmickID);
+typedef void (*GimmickProfileInitFunction)(GimmickProfile* pProfile, const char* pName, u32 objectID, u32 gimmickID);
 
 struct GimmickRegistrant {
     char mInLevelName[0x20];
     GimmickProfileInitFunction mInitFunction;
 };
 
-const GimmickRegistrant AdditionalGimmickRegistrants[] = {
-    {
-        "TEST -- REMOVE THIS ENTRY LATER",
-        // an existing function address that's valid and won't crash the game
-        // (you wouldn't actually put raw addresses like this,
-        // you'd just pass in the Init function as a pointer)
-        #if defined(__CONSOLE__)
-            (GimmickProfileInitFunction)(0x024B0398 + 0x0C700000)
-        #else
-            (GimmickProfileInitFunction)(0x024B0398)
-        #endif
+// clang-format off
+
+// this is okay because InitProfile is static and would mangle the same way it would as if it were part of a namespace
+#define DECL_GIMMICK_PROFILE_INIT(C) \
+    namespace C { \
+        extern void InitProfile(GimmickProfile*, const char*, u32, u32); \
     }
+
+#define DECL_GIMMICK_REGISTRANT(C, N) \
+    { \
+        .mInLevelName = N, \
+        .mInitFunction = C::InitProfile \
+    }
+
+DECL_GIMMICK_PROFILE_INIT(EggSpawner);
+
+const GimmickRegistrant AdditionalGimmickRegistrants[] = {
+    DECL_GIMMICK_REGISTRANT(EggSpawner, "th_egg_spawn"),
 };
+
+// clang-format on

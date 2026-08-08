@@ -1,10 +1,11 @@
 #pragma once
 
-#include <gfl/gflTask.hpp>
 #include <gfl/gflMath.hpp>
+#include <gfl/gflMemoryUtil.hpp>
+#include <gfl/gflTask.hpp>
+#include <graphics/FlfMdlDraw.hpp>
 #include <object/YsGameObj.hpp>
 #include <object/collision/IObjHitCB.hpp>
-#include <graphics/FlfMdlDraw.hpp>
 #include <util/BitsetWrapper.hpp>
 
 class MapObject : public YsGameObj, public IObjHitCB {
@@ -101,6 +102,7 @@ public:
     void SetFlags(u32, bool);
 
     void DeleteSelf();
+
 public:
     /* 0x014 */ gfl::Task mPrimaryTask;
     /* 0x030 */ gfl::Task* mSecondaryTask;

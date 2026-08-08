@@ -1,9 +1,8 @@
 #pragma once
 
-#include <types.h>
-#include <ghs_stl/vector.h>
-
+#include <ghs_stl/vector.hpp>
 #include <object/collision/IObjHitCB.hpp>
+#include <types.h>
 
 class MapObjHit {
 public:
@@ -39,6 +38,7 @@ public:
     void SetAllCollisionFlag(u32 toggle);
     void DefineCollision(const CollisionDefinition& rColDef, u32 arg2);
     void DefineCollisions(const CollisionDefinition pColDef[], u32 count, u32 arg3);
+
 private:
     /* 0x00 */ MapObject* mOwner;
     /* 0x04 */ IObjHitCB* mCallback;

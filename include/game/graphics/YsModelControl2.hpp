@@ -1,11 +1,10 @@
 #pragma once
 
-#include <types.h>
-#include <ghs_stl/string.h>
-
 #include <gfl/gflMath.hpp>
+#include <ghs_stl/string.hpp>
 #include <graphics/FlfMdlDraw.hpp>
 #include <graphics/ResourceList.hpp>
+#include <types.h>
 
 class YsModelControl2 {
 public:
@@ -15,8 +14,10 @@ public:
     virtual ~YsModelControl2();
 
     void Reset();
-    void Init(FlfMdlDraw* pFlfMdlDraw, const char* pArchiveName, const char* pBFRESName, ResourceList* pResourceList, u32 flags, u32 arg6);
+    void Init(FlfMdlDraw* pFlfMdlDraw, const char* pArchiveName, const char* pBFRESName, ResourceList* pResourceList,
+              u32 flags, u32 arg6);
     void UpdateMatrix(const gfl::Matrix34& rMatrix);
+
 public:
     /* 0x00 */ u32 m_0;
     /* 0x04 */ ghs::std::string mArchivePath;

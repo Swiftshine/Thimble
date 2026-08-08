@@ -1,15 +1,15 @@
 #pragma once
 
-#include <types.h>
-#include <ghs_stl/list.h>
-#include <ghs_stl/string.h>
 #include <game/object/GimmickObject.hpp>
 #include <game/object/ObjectIDs.hpp>
+#include <ghs_stl/list.hpp>
+#include <ghs_stl/string.hpp>
+#include <types.h>
 
-typedef void (* ResourceListInitFunction)(ghs::std::list<ghs::std::string>* pList);
-typedef void (* ParameterSetupFunction)();
-typedef void (* ManagerInitFunction)();
-typedef void (* ManagerDestroyFunction)();
+typedef void (*ResourceListInitFunction)(ghs::std::list<ghs::std::string>* pList);
+typedef void (*ParameterSetupFunction)();
+typedef void (*ManagerInitFunction)();
+typedef void (*ManagerDestroyFunction)();
 
 enum class ObjectID : u32;
 enum class EnemyID : u32;
@@ -40,7 +40,7 @@ struct EnemyProfile : ObjectInitInfo {
 
 SIZE_ASSERT(EnemyProfile, 0x54);
 
-typedef GimmickObject* (* GimmickBuildFunction)(u32 gimmickID, GimmickBuildInfo* pBuildInfo);
+typedef GimmickObject* (*GimmickBuildFunction)(u32 gimmickID, GimmickBuildInfo* pBuildInfo);
 
 struct GimmickProfile : ObjectInitInfo {
     /* 0x1C */ GimmickID mGimmickID;
