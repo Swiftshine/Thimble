@@ -1,29 +1,29 @@
-#include <telkin/Telkin.h>
 #include <game/object/ObjectProfile.hpp>
 #include <game/object/YsGameObj.hpp>
-#include <thimble/CustomIDManager.hpp>
-#include <thimble/CustomObjectProfiles.hpp>
-
+#include <telkin/Telkin.h>
+#include <thimble/RegistrarManager.hpp>
 
 extern ObjectID GetObjectIDByCategoryAndLocalID(YsGameObj::ObjectCategory category, u32 localID);
 extern YsGameObj::ObjectCategory GetCategoryByObjectID(ObjectID objectID);
-extern void RegisterGimmickProfile(const char* pNameInLevelFile, ObjectID objectID, GimmickID gimmickID, GimmickProfileInitFunction pInitFunction);
+extern void RegisterGimmickProfile(const char* pNameInLevelFile, ObjectID objectID, GimmickID gimmickID,
+                                   GimmickProfileInitFunction pInitFunction);
 
 ObjectID GetObjectIDByCategoryAndLocalID_Custom(YsGameObj::ObjectCategory category, u32 localID) {
-    th::CustomIDManager& ids = th::CustomIDManager::Instance();
+    th::RegistrarManager& ids = th::RegistrarManager::Instance();
 
     switch (category) {
-        case YsGameObj::ObjectCategory::GimmickObject: {
-            for (const auto& set : ids.mGimmickIDSets) {
-                if (set.mLocalID == localID) {
-                    return set.mObjectID;
-                }
+    case YsGameObj::ObjectCategory::GimmickObject: {
+        for (const auto& set : ids.mGimmickIDSets) {
+            if (set.mLocalID == localID) {
+                return set.mObjectID;
             }
-
-            [[fallthrough]];
         }
 
-        default: break;
+        [[fallthrough]];
+    }
+
+    default:
+        break;
     }
 
     // just let the game handle it
@@ -37,7 +37,7 @@ tBranch(0x021733F0, GetObjectIDByCategoryAndLocalID_Custom, tk::BranchType::bl);
 tBranch(0x0281C36C, GetObjectIDByCategoryAndLocalID_Custom, tk::BranchType::b);
 
 YsGameObj::ObjectCategory GetCategoryByObjectID_Custom(ObjectID objectID) {
-    th::CustomIDManager& ids = th::CustomIDManager::Instance();
+    th::RegistrarManager& ids = th::RegistrarManager::Instance();
 
     for (const auto& set : ids.mGimmickIDSets) {
         if (set.mObjectID == objectID) {
@@ -57,16 +57,12 @@ namespace th {
 void SetupAdditionalGimmickProfiles() {
     u32 num = 0;
 
-    CustomIDManager& ids = CustomIDManager::Instance();
+    RegistrarManager& ids = RegistrarManager::Instance();
 
     // all IDs are filled in automatically
-    for (const GimmickRegistrant& registrant : AdditionalGimmickRegistrants) {
-        RegisterGimmickProfile(
-            registrant.mInLevelName,
-            ids.mHighestObjectID,
-            ids.mHighestGimmickID,
-            registrant.mInitFunction
-        );
+    for (const auto& registrant : ids.mGimmickRegistrants) {
+        RegisterGimmickProfile(registrant.mInLevelName, ids.mHighestObjectID, ids.mHighestGimmickID,
+                               registrant.mInitFunction);
 
         ids.AddGimmickID();
         num++;
@@ -79,4 +75,4 @@ void SetupAdditionalGimmickProfiles() {
     }
 }
 
-}
+} // namespace th

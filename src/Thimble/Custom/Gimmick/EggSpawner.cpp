@@ -6,6 +6,7 @@
 #include <object/PlEgg.hpp>
 #include <object/control/OtherEggCtrl.hpp>
 #include <telkin/Print.h>
+#include <thimble/RegistrarManager.hpp>
 
 class EggSpawner : public GimmickObject {
 public:
@@ -24,6 +25,8 @@ private:
 GimmickObject* EggSpawner::Build(u32 id, GimmickBuildInfo* pBuildInfo) {
     return new (gfl::HeapID::Work) EggSpawner(pBuildInfo);
 }
+
+REGISTER_GIMMICK(EggSpawner, "th_egg_spawn");
 
 void EggSpawner::InitProfile(GimmickProfile* pProfile, const char* pName, u32 objectID, u32 gimmickID) {
     pProfile->mName = pName;
