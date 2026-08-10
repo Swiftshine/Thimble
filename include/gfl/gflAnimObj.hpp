@@ -1,5 +1,9 @@
 #pragma once
 
+// clang-format off
+#include <types.h>
+// clang-format on
+
 #include <gflAnimBlend.hpp>
 #include <gflHeapWiiU.hpp>
 #include <gflResArchivedFileInfo.hpp>
@@ -12,13 +16,13 @@ class Model;
 class AnimObj {
 public:
     enum class AnimFlags : u32 {
-        None            = 0,
-        Skeletal        = 1 << 0,
-        ShaderParam     = 1 << 1,
-        TexturePattern  = 1 << 2,
-        Visibility      = 1 << 3,
-        Shape           = 1 << 4,
-        All             = 0xFF
+        None = 0,
+        Skeletal = 1 << 0,
+        ShaderParam = 1 << 1,
+        TexturePattern = 1 << 2,
+        Visibility = 1 << 3,
+        Shape = 1 << 4,
+        All = 0xFF
     };
 
     AnimObj(void* pBuildInfo, Model* pModel);
@@ -44,6 +48,7 @@ public:
     void SetAnimFlags(u32 animFlags);
     void UpdateFrame();
     void Calc();
+
 private:
     /* 0x00 */ float mEndFrame;
     /* 0x04 */ bool mHasAnimation;
@@ -63,4 +68,4 @@ private:
 
 SIZE_ASSERT(AnimObj, 0x34);
 
-}
+} // namespace gfl

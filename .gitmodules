@@ -1,0 +1,3 @@
+[submodule "lib/nw/G3d"]
+	path = lib/nw/G3d
+	url = https://github.com/nsmbu/G3d

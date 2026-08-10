@@ -11,9 +11,12 @@
         'include',
         'include/game',
         'include/gfl',
+        'lib/nw/G3d/include/',
         'src',
     ],
-    BuildOptions: [],
+    BuildOptions: [
+        '-DNW_RELEASE'
+    ],
     Targets: {
         US: {
             TitleID: '00050000-10184D00',

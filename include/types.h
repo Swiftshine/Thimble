@@ -15,6 +15,7 @@ using u64 = uint64_t;
 using s64 = int64_t;
 using size_t = std::size_t;
 using byte_t = u8;
+using char16 = int16_t; // for nw::g3d
 
 #define STRUCT_FILL(size) PP_CONCAT(u8 unk_contents_, __LINE__)[size]
 #define PAD(size) PP_CONCAT(u8 padding_, __LINE__)[size]
