@@ -32,19 +32,19 @@ SIZE_ASSERT(ObjectInitInfo, 0x1C);
 
 typedef void (*EnemyBuildFunction)(void* pBuildInfo);
 
-struct EnemyProfile : ObjectInitInfo {
+struct MapEnemy : ObjectInitInfo {
     /* 0x1C */ EnemyID mEnemyID;
     /* 0x20 */ EnemyBuildFunction mBuildFunction;
     /* 0x24 */ STRUCT_FILL(0x30);
 };
 
-SIZE_ASSERT(EnemyProfile, 0x54);
+SIZE_ASSERT(MapEnemy, 0x54);
 
 typedef GimmickObject* (*GimmickBuildFunction)(u32 gimmickID, GimmickBuildInfo* pBuildInfo);
 
-struct GimmickProfile : ObjectInitInfo {
+struct MapGimmick : ObjectInitInfo {
     /* 0x1C */ GimmickID mGimmickID;
     /* 0x20 */ GimmickBuildFunction mBuildFunction;
 };
 
-SIZE_ASSERT(GimmickProfile, 0x24);
+SIZE_ASSERT(MapGimmick, 0x24);

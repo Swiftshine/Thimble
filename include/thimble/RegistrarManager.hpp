@@ -7,7 +7,7 @@
 #include <types.h>
 #include <vector>
 
-typedef void (*GimmickProfileInitFunction)(GimmickProfile* pProfile, const char* pName, u32 objectID, u32 gimmickID);
+typedef void (*MapGimmickInitFunction)(MapGimmick* pProfile, const char* pName, u32 objectID, u32 gimmickID);
 
 namespace th {
 class RegistrarManager {
@@ -21,7 +21,7 @@ public:
     };
 
     struct GimmickRegistrant {
-        template <size_t N> inline GimmickRegistrant(const char (&gimmickName)[N], GimmickProfileInitFunction init) {
+        template <size_t N> inline GimmickRegistrant(const char (&gimmickName)[N], MapGimmickInitFunction init) {
             static_assert(N <= 0x21, "Gimmick name must be at most 32 characters");
 
             memcpy(mInLevelName, gimmickName, N);
@@ -31,7 +31,7 @@ public:
         }
 
         char mInLevelName[0x20];
-        GimmickProfileInitFunction mInitFunction;
+        MapGimmickInitFunction mInitFunction;
     };
 
     static RegistrarManager& Instance();

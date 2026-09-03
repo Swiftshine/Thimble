@@ -7,7 +7,7 @@
 namespace th {
 const char* CONFIG_PATH = "thimble/config.bson";
 
-void SetupAdditionalGimmickProfiles();
+void SetupAdditionalMapGimmicks();
 void PatchInstructionsForTweaks();
 
 void RunHook() {
@@ -20,7 +20,7 @@ void RunHook() {
         },
         [](size_t i, size_t total) {
             tk::println("\t(%d/%d) Setting up additional gimmick profiles...", i + 1, total);
-            SetupAdditionalGimmickProfiles();
+            SetupAdditionalMapGimmicks();
         },
         [](size_t i, size_t total) {
             tk::println("\t(%d/%d) Patching instructions for misc. tweaks...", i + 1, total);

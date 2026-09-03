@@ -11,7 +11,7 @@
 class EggSpawner : public GimmickObject {
 public:
     static GimmickObject* Build(u32 id, GimmickBuildInfo* pBuildInfo);
-    static void InitProfile(GimmickProfile* pProfile, const char* pName, u32 objectID, u32 gimmickID);
+    static void InitProfile(MapGimmick* pProfile, const char* pName, u32 objectID, u32 gimmickID);
 
     EggSpawner(GimmickBuildInfo* pBuildInfo);
     ~EggSpawner();
@@ -28,7 +28,7 @@ GimmickObject* EggSpawner::Build(u32 id, GimmickBuildInfo* pBuildInfo) {
 
 REGISTER_GIMMICK(EggSpawner, "th_egg_spawn");
 
-void EggSpawner::InitProfile(GimmickProfile* pProfile, const char* pName, u32 objectID, u32 gimmickID) {
+void EggSpawner::InitProfile(MapGimmick* pProfile, const char* pName, u32 objectID, u32 gimmickID) {
     pProfile->mName = pName;
     pProfile->mObjectID = static_cast<ObjectID>(objectID);
     pProfile->mGimmickID = static_cast<GimmickID>(gimmickID);

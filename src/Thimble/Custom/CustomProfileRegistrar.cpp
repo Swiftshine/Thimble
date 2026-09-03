@@ -5,8 +5,8 @@
 
 extern ObjectID GetObjectIDByCategoryAndLocalID(YsGameObj::ObjectCategory category, u32 localID);
 extern YsGameObj::ObjectCategory GetCategoryByObjectID(ObjectID objectID);
-extern void RegisterGimmickProfile(const char* pNameInLevelFile, ObjectID objectID, GimmickID gimmickID,
-                                   GimmickProfileInitFunction pInitFunction);
+extern void RegisterMapGimmick(const char* pNameInLevelFile, ObjectID objectID, GimmickID gimmickID,
+                                   MapGimmickInitFunction pInitFunction);
 
 ObjectID GetObjectIDByCategoryAndLocalID_Custom(YsGameObj::ObjectCategory category, u32 localID) {
     th::RegistrarManager& ids = th::RegistrarManager::Instance();
@@ -54,14 +54,14 @@ tBranch(0x028199D0, GetCategoryByObjectID_Custom, tk::BranchType::bl);
 
 namespace th {
 
-void SetupAdditionalGimmickProfiles() {
+void SetupAdditionalMapGimmicks() {
     u32 num = 0;
 
     RegistrarManager& ids = RegistrarManager::Instance();
 
     // all IDs are filled in automatically
     for (const auto& registrant : ids.mGimmickRegistrants) {
-        RegisterGimmickProfile(registrant.mInLevelName, ids.mHighestObjectID, ids.mHighestGimmickID,
+        RegisterMapGimmick(registrant.mInLevelName, ids.mHighestObjectID, ids.mHighestGimmickID,
                                registrant.mInitFunction);
 
         ids.AddGimmickID();

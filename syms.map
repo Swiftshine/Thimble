@@ -461,5 +461,5 @@
     _ZNK9PlEggCtrl23GetNumAttachedYarnBallsEv = 0x0291BC6C;
 
 /* R */
-    // RegisterGimmickProfile(char const*, ObjectID, GimmickID, void (*)(GimmickProfile*, char const*, unsigned int, unsigned int))
-    _Z22RegisterGimmickProfilePKc8ObjectID9GimmickIDPFvP14GimmickProfileS0_jjE = 0x02167B9C;
+    // RegisterMapGimmick(char const*, ObjectID, GimmickID, void (*)(MapGimmick*, char const*, unsigned int, unsigned int))
+    _Z18RegisterMapGimmickPKc8ObjectID9GimmickIDPFvP10MapGimmickS0_jjE = 0x02167B9C;
